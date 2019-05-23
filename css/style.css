@@ -50,6 +50,28 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+.container-wide {
+  width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-layout {
+  display: flex;
+}
+.content-wrapper {
+  overflow-x: hidden;
+}
+.sidebar {
+  padding-left: 60px;
+  padding-right: 68px;
+  width: 330px;
+  flex-shrink: 0;
+  background-color: #efefef;
+  position: relative;
+}
+.content {
+  flex-grow: 2;
+}
 
 /*header*/
 .header {
@@ -312,3 +334,213 @@ img {
   margin-right: 0;
 }
 
+/*page title*/
+.page-title {
+  font-family: Gillroy, "Arial Black", sans-serif;
+  font-weight: 800;
+  color: #000;
+  font-size: 47px;
+  line-height: 1;
+  margin-top: 40px;
+  letter-spacing: .015em;
+}
+
+/*.breadcrumbs*/
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 47px;
+  color: #b2b2b2;
+  font-weight: 300;
+  font-size: 14px;
+}
+.breadcrumbs li {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 15px;
+}
+.breadcrumbs li:last-child {
+  margin-right: 0;
+}
+.breadcrumbs a {
+  text-decoration: none;
+  color: inherit;
+  padding-right: 20px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAMklEQVQImWNmYGB4zMDAcJeBgeEmAxT4MTAwfIHScIBVsIOBgeElujYnrMofwTkMDAwA5qELcjoOqJUAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  transition: color .3s ease-out;
+}
+.breadcrumbs a:hover {
+  color: #666;
+}
+.breadcrumbs a:active {
+  color: #e5e5e5;
+}
+
+/*sidebar*/
+.sidebar-header {
+  background-color: #dcdcdc;
+  margin-left: -60px;
+  margin-right: -68px;
+  padding-left: 60px;
+  padding-right: 68px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar::before,
+.sidebar-header::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 150vw;
+  position: absolute;
+  background-color: #dcdcdc;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.sidebar::before {
+  background-color: #eee;
+}
+.sidebar-header-title,
+.content-header-title {
+  text-transform: uppercase;
+  font-family: Gillroy, "Arial Black", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0;
+}
+
+/*.content*/
+.content-header {
+  background-color: #ebebeb;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding-left: 72px;
+}
+.content-header::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 150vw;
+  position: absolute;
+  background-color: #ebebeb;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.content-header-title {
+  margin-right: 50px;
+  margin-top: 2px;
+}
+.content-header-sort {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 14px;
+}
+.content-header-sort li {
+  margin-right: 28px;
+}
+.content-header-sort li:last-child {
+  margin-right: 0;
+}
+.content-header-sort a {
+  color: #bababa;
+  text-decoration: none;
+  transition: color .3s ease-out;
+}
+.content-header-sort a:hover {
+  color: #7a7a7a;
+}
+.content-header-sort a:active {
+  color: #000;
+}
+.content-header-sort a.active {
+  color: #000;
+}
+.content-header-sort--order {
+  margin-left: auto;
+  font-size: 0;
+  align-items: center;
+}
+.content-header-sort--order li {
+  margin-right: 20px;
+}
+.sort {
+  display: block;
+  height: 0;
+  width: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+.sort--up {
+  border-top: 0;
+  border-bottom: 10px solid;
+}
+.sort--down {
+  border-bottom: 0;
+  border-top: 10px solid;
+}
+
+/*catalog*/
+.catalog {
+  padding: 70px 0 76px 70px;
+}
+.catalog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*catalog-item*/
+.catalog-item {
+  margin-bottom: 45px;
+}
+.catalog-item-img {
+  display: block;
+}
+@supports (object-fit: cover) {
+  .catalog-item-img {
+    height: 380px;
+    object-fit: cover;
+  }
+}
+.catalog-item-overlay {
+  display: none;
+}
+.catalog-item-img-wrap {
+  margin-bottom: 30px;
+}
+.catalog-item-text-wrap {
+  display: flex;
+  align-items: flex-start;
+  font-family: Gillroy, "Arial Black", sans-serif;
+}
+.catalog-item-title {
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 800;
+  transition: opacity .3s ease-out;
+}
+.catalog-item-title:hover {
+  opacity: .6;
+}
+.catalog-item-title:active {
+  opacity: .3;
+}
+.catalog-item-price {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #464646;
+  font-weight: 300;
+  font-size: 16px;
+}
