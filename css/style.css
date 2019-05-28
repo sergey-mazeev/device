@@ -98,6 +98,7 @@ img {
 .btn--main span {
   position: relative;
   z-index: 2;
+  transition: opacity .25s ease-out;
 }
 .btn--main::before {
   content: '';
@@ -110,9 +111,6 @@ img {
   margin-top: -4px;
   background-color: #f0c52e;
   z-index: 0;
-}
-.btn--main span {
-  transition: opacity .25s ease-out;
 }
 .btn--main:hover::before {
   height: 100%;

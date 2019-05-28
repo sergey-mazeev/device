@@ -1,0 +1,34 @@
+<!doctype html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.css")
+    link(rel="stylesheet", href="css/style.css")
+    title Device
+  body
+    header.header
+      .container
+        a.header-logo(href="/") DEVICE
+        .header-row
+          form.header-search(action="#")
+            input(type="text", name="search", placeholder="Поиск по сайту")
+            input(type="submit", value="Найти")
+          .header-row-right
+            .header-user-menu
+              a.header-link.header-link--user(href="#") Валентин Петухов
+              a.header-link.header-link--logout(href="#") Выйти
+            a.header-link.header-link--compare(href="#") Сравнить
+            a.header-link.header-link--cart(href="#") Корзина
+        .header-row
+          .header-catalog
+            .header-catalog-title Каталог товаров
+            .header-catalog-menu
+              ul
+                each item in ['Виртуальная реальность', 'Фитнес-браслеты', 'Квадрокоптеры', 'Моноподы для селфи', 'Умные часы', 'Экшн-камеры']
+                  li: a(href="#")= item
+          .header-row-right
+            nav.header-menu
+              ul
+                each item in ['Доставка', 'Гарантия', 'Контакты']
+                  li: a(href="#")= item
