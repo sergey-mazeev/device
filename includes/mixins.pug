@@ -1,0 +1,31 @@
+mixin catalog-item(name, img, price, isNew)
+    li.catalog-item(class= isNew ? 'catalog-item--new' : '')
+        .catalog-item-img-wrap
+            img.catalog-item-img(src="img/item-" + img + ".jpg", alt= name)
+            .catalog-item-overlay
+                a.btn.btn--main(href="#"): span В корзину
+                a.btn.btn--clear(href="#") Добавить к сравнению
+        .catalog-item-text-wrap
+            a.catalog-item-title(href="#")= name
+            span.catalog-item-price= price
+
+
+mixin breadcrumbs(list)
+    ul.breadcrumbs
+        if list
+            li: a(href="#") Главная
+            each link, index in list
+                if index === (list.length - 1)
+                    li= link
+                else
+                    li: a(href="#")= link
+        else
+            li Главная
+
+mixin pagination
+    ul.pagination
+        li: a(href='#') Назад
+        li: span 1
+        li: a(href='#') 2
+        li: a(href='#') 3
+        li: a(href='#') Вперед

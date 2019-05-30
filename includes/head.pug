@@ -25,10 +25,12 @@ html(lang="ru")
             .header-catalog-title Каталог товаров
             .header-catalog-menu
               ul
-                each item in ['Виртуальная реальность', 'Фитнес-браслеты', 'Квадрокоптеры', 'Моноподы для селфи', 'Умные часы', 'Экшн-камеры']
+                - var catalogMenu = ['Виртуальная реальность', 'Фитнес-браслеты', 'Квадрокоптеры', 'Моноподы для селфи', 'Умные часы', 'Экшн-камеры']
+                each item in catalogMenu
                   li: a(href="#")= item
           .header-row-right
             nav.header-menu
               ul
-                each item in ['Доставка', 'Гарантия', 'Контакты']
+                - var mainMenu = ['Доставка', 'Гарантия', 'Контакты']
+                each item in mainMenu
                   li: a(href="#")= item

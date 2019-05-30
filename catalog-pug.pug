@@ -1,14 +1,31 @@
 include includes/head.pug
+include includes/mixins.pug
 
 .content-wrapper
     .container
         h1.page-title Моноподы для селфи
-        ul.breadcrumbs
-            li: a(href="#") Главная
-            li: a(href="#") Каталог товаров
-            li Моноподы для селфи
-
+        +breadcrumbs(["Каталог товаров", "Моноподы для селфи"])
+    
     .container-wide.main-layout
-        // - HERE!
+        aside.sidebar
+            header.sidebar-header
+                h4.sidebar-header-title Фильтр:
+        .content
+            header.content-header
+                h4.content-header-title Сортировка:
+                ul.content-header-sort
+                  li: a.active(href="#") По цене
+                  li: a(href="#") По типу
+                  li: a(href="#") По популярности
+                ul.content-header-sort.content-header-sort--order
+                  li: a.sort.sort--up.active(href="#") По возрастанию
+                  li: a.sort.sort--down(href="#") По убыванию
+            main.catalog
+                ul.catalog-list
+                    +catalog-item('Любительская селфи-палка', "1", "500 руб.")
+                    +catalog-item('Профессиональная селфи-палка', "2", "1 500 руб.")
+                    +catalog-item('Непотопляемая селфи-палка', "3", "2 500 руб.")
+                    +catalog-item('Селфи-палка «Следуй за мной»', "4", "4 900 руб.", true)
+                +pagination
 
 include includes/footer.pug
