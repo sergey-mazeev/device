@@ -473,6 +473,9 @@ img {
   font-weight: 800;
   margin: 0;
 }
+.sidebar-content {
+  padding-top: 70px;
+}
 
 /*.content*/
 .content-header {
@@ -717,3 +720,28 @@ img {
 .pagination li:last-child a:active {
   opacity: .3;
 }
+
+/*sidebar-filter*/
+.sidebar-filter {
+
+}
+.sidebar-filter fieldset {
+  border: 0;
+  border-top: 2px solid #000000;
+  padding: 60px 0 0;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.sidebar-filter legend {
+  display: block;
+  font-family: Gillroy, "Arial Black", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #000;
+  position: absolute;
+  left: 0;
+  top: 15px;
+}
+
+

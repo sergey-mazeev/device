@@ -10,6 +10,19 @@ include includes/mixins.pug
         aside.sidebar
             header.sidebar-header
                 h4.sidebar-header-title Фильтр:
+            .sidebar-content
+                form.sidebar-filter
+                    fieldset
+                        legend Стоимость
+                    fieldset
+                        legend Цвет
+                        each checkbox, index in ["Черный", "Белый", "Синий", "Красный", "Розовый"]
+                            .form-item
+                                input(type="checkbox", name= checkbox, id="checkbox-" + index + 1, checked= index === 1 ? true : false)
+                                label(for="checkbox-" + index + 1)= checkbox
+                    fieldset
+                        legend Bluetooth
+                    button.btn.btn--main(type="submit"): span Показать
         .content
             header.content-header
                 h4.content-header-title Сортировка:
