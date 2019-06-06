@@ -14,14 +14,19 @@ include includes/mixins.pug
                 form.sidebar-filter
                     fieldset
                         legend Стоимость
+                        .sidebar-filter-price
                     fieldset
                         legend Цвет
                         each checkbox, index in ["Черный", "Белый", "Синий", "Красный", "Розовый"]
                             .form-item
-                                input(type="checkbox", name= checkbox, id="checkbox-" + index + 1, checked= index === 1 ? true : false)
+                                input(type="checkbox", name= checkbox, id="checkbox-" + index + 1, checked= index === 1)
                                 label(for="checkbox-" + index + 1)= checkbox
                     fieldset
                         legend Bluetooth
+                        each radio, index in ["Есть", "Нет"]
+                            .form-item
+                                input(type="radio", name="bluetooth", value= radio, id="radio-" + index + 1, checked= index === 0)
+                                label(for="radio-" + index + 1)= radio
                     button.btn.btn--main(type="submit"): span Показать
         .content
             header.content-header
